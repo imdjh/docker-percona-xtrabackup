@@ -1,7 +1,8 @@
-FROM mariadb:10.0
+FROM registry.alauda.cn/library/mariadb:10.0
 MAINTAINER Jiahao Dai<jiahao.dai@hypers.com>
 
 COPY sources.list /etc/apt/sources.list
+COPY db-backup.conf /etc/db-backup.conf
 
 RUN apt-get update \
   && apt-get install --force-yes -y \
